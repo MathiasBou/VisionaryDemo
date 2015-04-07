@@ -1,0 +1,64 @@
+.ui-progress-bar {
+  width: 100%;
+}
+ 
+.ui-progress-good {
+  background-color: limegreen;
+//  border: lime;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #7CFC00, inset 0px -1px 1px #32CD32;
+  -moz-box-shadow: inset 0px 1px 0px 0px #7CFC00, inset 0px -1px 1px #32CD32;
+  box-shadow: inset 0px 1px 0px 0px #7CFC00, inset 0px -1px 1px #32CD32;
+}
+ 
+.ui-progress-ok {
+  background-color: gold;
+//  border: yellow;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #FFD700, inset 0px -1px 1px #DAA520;
+  -moz-box-shadow: inset 0px 1px 0px 0px #FFD700, inset 0px -1px 1px #DAA520;
+  box-shadow: inset 0px 1px 0px 0px #FFD700, inset 0px -1px 1px #DAA520;
+}
+ 
+.ui-progress-bad {
+  background-color: red;
+//	border: red;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #FF6347, inset 0px -1px 1px #800000;
+  -moz-box-shadow: inset 0px 1px 0px 0px #FF6347, inset 0px -1px 1px #800000;
+  box-shadow: inset 0px 1px 0px 0px #FF6347, inset 0px -1px 1px #800000;
+}
+ 
+.ui-progress span.ui-label {
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  line-height: 20px;
+  //padding-right: 12px;
+  color: rgba(0,0,0,1);
+  text-shadow: rgba(255,255,255, 0.45) 0 1px 0px;
+  white-space: nowrap;
+}
+ 
+.ui-progress-bar {
+  height: 22px;
+  padding-right: 2px;
+  display: inline-block;
+ /* background-color: #abb2bc; */
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px #FFF;
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px #FFF;
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px #FFF;
+}       
+ 
+.ui-progress {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 20px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  border-radius: 35px;
+  -webkit-background-size: 44px 44px;
+//  background-color: #74d04c;
+  //border: 1px solid #4c8932;
+}

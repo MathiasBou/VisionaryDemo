@@ -1,0 +1,268 @@
+<div id="dialogBox">
+	<div class="ui-layout-north ui-corner-all">
+		<div class="pane-header ui-state-active">
+			<span id="data-title">data</span>
+		</div>
+		<ul>
+			<li><a href="#tabs-north-1">Customer</a></li>
+			<li><a href="#tabs-north-2">Address</a></li>
+			<li><a href="#tabs-north-3">Contact</a></li>
+			<li><a href="#tabs-north-4">Call</a></li>
+			<li><a href="#tabs-north-5">Social</a></li>
+		</ul>
+		<div id="pnlCustomerProfile" class="ui-layout-content ui-widget-content">
+			<div id="tabs-north-1">
+				<div class="col-sm-9">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="lastName" class="col-sm-4 advisor-form-lable">Last Name:</label><div class="col-sm-8"><input type="text" class="advisor-form-input" id="lastName" placeholder="" ></div>
+							<label for="firstName" class="col-sm-4 advisor-form-lable">First Name:</label><div class="col-sm-8"><input type="text" class="advisor-form-input" id="firstName" placeholder="" ></div>
+						</div>
+						<div class="form-group"></div>
+						<div class="form-group">
+							<label for="twitterid" class="col-sm-4 advisor-form-lable">Twitter</label><div class="col-sm-8"><input type="text" class="advisor-form-input" id="twitterid" placeholder="" ></div>
+							<label for="facebookid" class="col-sm-4 advisor-form-lable">Facebook</label><div class="col-sm-8"><input type="text" class="advisor-form-input" id="facebookid" placeholder="" ></div>
+						</div>
+						
+						<div class="form-group">
+							<label for="homeBranch" class="col-sm-4 advisor-form-lable" id="homeBranch">Home Branch:</label>
+							<div class="col-sm-8">
+								<textarea class="advisor-form-input" rows="1" id="homeBranchValue"></textarea>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3">
+					<img class="profile_image"></img>
+					<button type="button" class="btn btn-primary btn-xs btn-block">Arrange <br/>Appointment</button>
+				</div>
+			</div>
+			<div id="tabs-north-2">
+				<div class="col-sm-9">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="address" class="col-sm-2 advisor-form-lable">Address:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="address" placeholder="" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="city" class="col-sm-2 advisor-form-lable">City:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="city" placeholder="" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="state" class="col-sm-2 advisor-form-lable">State:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="state" placeholder="" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="zip" class="col-sm-2 advisor-form-lable">Zip:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="zip" placeholder="" >
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3">
+					<img class="profile_image"></img>
+					<button type="button" class="btn btn-primary btn-xs btn-block">Arrange <br/>Appointment</button>
+				</div>
+			</div>
+			<div id="tabs-north-3">
+				<div class="col-sm-9">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="mobile" class="col-sm-2 advisor-form-lable">Mobile:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="mobile" placeholder="" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="phone" class="col-sm-2 advisor-form-lable">Phone:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="phone" placeholder="" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-sm-2 advisor-form-lable">Email:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="email" placeholder="" >
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3">
+					<img class="profile_image"></img>
+					<button type="button" class="btn btn-primary btn-xs btn-block">Arrange <br/>Appointment</button>
+				</div>
+			</div>
+			<div id="tabs-north-4">
+				<div class="col-sm-9">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="purpose" class="col-sm-2 advisor-form-lable">Purpose:</label>
+							<div class="col-sm-10">
+								<select id="purpose" name="purpose" size="1" class="advisor-form-select">
+									<optgroup label="Product">
+										<option value="product purchase">Purchase</option>
+										<option value="product inquiry">Inquiry</option>
+										<option value="product return">Return</option>
+										<option value="product complaint">Complaint</option>
+									</optgroup>
+									<optgroup label="Service">
+										<option value="service purchase">Purchase</option>
+										<option value="service inquiry">Inquiry</option>
+										<option value="service return">Return</option>
+										<option value="service complaint">Complaint</option>
+									</optgroup>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="demeanor" class="col-sm-2 advisor-form-lable">Demeanor:</label>
+							<div class="col-sm-10">
+								<select id="demeanor" name="demeanor" size="1" class="advisor-form-select">
+									<option value="jovial">Jovial</option>
+									<option value="content">Content</option>
+									<option value="neutral">Neutral</option>
+									<option value="annoyed">Annoyed</option>
+									<option value="irate">Irate</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="product" class="col-sm-2 advisor-form-lable">Product:</label>
+							<div class="col-sm-10">
+								<input type="text" class="advisor-form-input" id="product" placeholder="" >
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3">
+					<img class="profile_image"></img>
+					<button type="button" class="btn btn-primary btn-xs btn-block">Arrange <br/>Appointment</button>
+				</div>
+			</div>
+			<div id="tabs-north-5">
+				<div class="data"><span class="dataLabel">Family status:</span><br><input id="Familienstand" name="Familienstand" type="text" size="40"/></div>
+				<div class="data"><span class="dataLabel">Employer:</span><br><input id="Arbeitgeber" name="Arbeitgeber" type="text" size="40" /></div>
+				<div class="data"><span class="dataLabel">Interests:</span><br>
+					<textarea id="Interests" rows="2" cols="40" style="font-size:13px" >
+Cars (Origin: Facebook Like "BMW", "Mercedes", "Audi")
+Football (Origin: Facebook Like "Bayern München")
+					</textarea></div>
+
+					<div class="data"><input id="placeholder" name="placeholder" type="text" style="visibility: hidden;"/></div>
+				</div>
+			</div>
+
+
+			<div class="pane-header ui-state-active"><span id="analytics-title">analytics</span></div>
+			<div id="pnlCustomerAnalytics" class="ui-layout-content ui-widget-content">
+				<div class="data row">
+					<span id="score1-label" class="advisor-progress-label col-sm-4"></span>
+					<div class="col-sm-7">
+					<div class="ui-progress-bar ui-container">
+						<div id="score1" class="ui-progress-good ui-progress" style="width: 0%;">
+							<span id="score1-text" class="ui-label" style="text-align:center;">0%</span>
+						</div><!-- .ui-progress -->
+					</div><!-- #progress_bar -->
+					</div>
+				</div>
+				<div class="data row">
+					<span id="score2-label" class="advisor-progress-label col-sm-4"></span>
+					<div class="col-sm-7">
+					<div class="ui-progress-bar ui-container">
+						<div id="score2" class="ui-progress ui-progress-bad" style="width: 0%;">
+							<span id="score2-text" class="ui-label" style="text-align:center;">0%</span>
+						</div><!-- .ui-progress -->
+					</div><!-- #progress_bar -->
+					</div>
+				</div>
+				<div class="data row">
+					<span id="score3-label" class="advisor-progress-label col-sm-4"></span>
+					<div class="col-sm-7">
+					<div class="ui-progress-bar ui-container">
+						<div id="score3" class="ui-progress ui-progress-ok" style="width: 0%;">
+							<span id="score3-text" class="ui-label" style="text-align:center;">0%</span>
+						</div><!-- .ui-progress -->
+					</div><!-- #progress_bar -->
+					</div>
+				</div>
+				<div class="data row">
+					<span id="score4-label" class="advisor-progress-label col-sm-4"></span>
+					<div class="col-sm-7">
+					<div class="ui-progress-bar ui-container">
+						<div id="score4" class="ui-progress ui-progress-ok" style="width: 0%;">
+							<span id="score4-text" class="ui-label" style="text-align:center;">0%</span>
+						</div><!-- .ui-progress -->
+					</div><!-- #progress_bar -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div  id="pnlCustomerNba" class="ui-layout-center ui-widget-content ui-corner-all">
+			<div class="pane-header ui-state-active">
+				<span id="result-title">result</span></div>
+					<ul>
+						<li><a id="result-history-tab-label" href="#tabs-center-1">history</a></li>
+						<li><a id="result-action-tab-label" href="#tabs-center-2">current</a></li>
+						<li><a id="result-search-tab-label" href="#tabs-center-3">Web Search History</a></li>
+					</ul>
+					<div class="tab_container">
+						<div id="tabs-center-1" class="tab_content">
+							<div id="nba-history-grid">
+								<table class="table table-bordered table-hover">
+									<thead>
+										<tr >
+											<th class="text-center">Description</th>
+											<th class="text-center">Date</th>
+											<th class="text-center">Contact Response</th>
+										</tr>
+									</thead>
+									<tbody id="advisor-nba-history-tab">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div id="tabs-center-2" class="tab_content">
+							<div id="nba-grid">
+								<table class="table table-bordered table-hover">
+									<thead>
+										<tr >
+											<th class="text-center">Offer</th>
+											<th class="text-center">Prop</th>
+											<th class="text-center">Action</th>
+										</tr>
+									</thead>
+									<tbody id="advisor-nba-tab">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div id="tabs-center-3" class="tab_content">
+							<div id="search-grid">
+								<table class="table table-bordered table-hover">
+									<thead>
+										<tr >
+											<th class="text-center">Search / Post Content</th>
+											<th class="text-center">Date</th>
+											<th class="text-center">Source</th>
+										</tr>
+									</thead>
+									<tbody id="advisor-search-history-tab">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+			</div>
+		</div>

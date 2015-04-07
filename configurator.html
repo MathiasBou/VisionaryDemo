@@ -1,0 +1,520 @@
+<!-- Configurator begins here -->
+<div id="configuratorModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Demo Configuration</h4>
+			</div>
+
+			<div class="modal-body">
+				<div id="configuratorAboutUs" style="display: none">
+					
+					<br>
+					This demo has been developed by 
+						<a href="mailto:khaled.nablie@sas.com">Khaled Nabli </a> and 
+						<a href="mailto:mathias.bouten@sas.com">Mathias Bouten </a>.
+					<br><br>
+					
+					
+					<br>
+					This Demo Configurator can be used to change the content of this demo.<br>
+					<br>
+					<table class="table table-bordered table-hover">
+						<tr><td>Profile 		</td> <td>Customer profile content for the Advisor Frontend of this demo</td></tr>
+						<tr><td>Analytics 	</td> <td>Customer analytics content for the analytics bars in the Advisor Frontend</td></tr>
+						<tr><td>SMS 			</td> <td>SMS recipients can be managed here to send out SMS when offers are accepted in the Advisor Frontend</td></tr>
+						<tr><td>Action History </td> <td>Recent customer actions shown in the Action History part of the Advisor Frontend</td></tr>
+						<tr><td>Next Best Actions </td> <td>New offer recommendations for the customer displayed in the Advisor Frontend</td></tr>
+						<tr><td>Search Post History </td> <td>Search strings and post contents of the customer displayed in the Advisor Frontend</td></tr>
+						<tr><td>Images </td> <td>You can configure which images should appear in the poster and the iphone area of the demo</td></tr>
+					</table>
+					<br><br>
+					
+				</div>
+				
+				<div id="configuratorImportExportConfig" style="display: none">
+					
+					<br>
+					Import or export an existing configuration with a string representation of a JSON object
+					<br><br>
+					
+					<div class="form-group">
+						<label class="control-label" for="buttons">Predefined Configurations</label><br>
+						<div class="btn-group" role="group" aria-label="...">
+						  	<button type="button" class="btn btn-default" onclick="useCurrentConfig();">Current Config</button>
+						  	<button type="button" class="btn btn-default" onclick="useBankingConfig();">Banking</button>
+						  	<button type="button" class="btn btn-default" onclick="useAutomotiveConfig();">Automotive</button>
+						  	<button type="button" class="btn btn-default" onclick="useTelcoConfig();">Telco</button>
+						  	<button type="button" class="btn btn-default" onclick="useInsuranceConfig();">Insurance</button>
+						  	<button type="button" class="btn btn-default" onclick="useEmptyConfig();">Custom</button>
+						</div>
+					</div>
+					
+					<div id="errorMessage" class="alert alert-danger" role="alert" style="display: none">Please double check your JSON Config object !!</div>
+					
+					<div id="jsonStringDiv" class="form-group">
+					  	<label class="control-label" for="jsonStringConfig">JSON Object as String</label>
+					  	<textarea rows="10" type="text" class="form-control" id="jsonConfigTextarea"></textarea>
+					</div>
+					
+					<div class="form-group"></div>
+					
+					<!--<a href="#" class="btn btn-primary" onclick="importConfiguration();"> Import Config </a>-->
+					
+					<div class="form-group"></div>
+					
+				</div>
+				
+				
+				<div role="tabpanel" id="configuratorTabpanel" style="display: block">
+					
+					<div id="successMessage" class="alert alert-success" role="alert" style="display: none">Successfully loaded!!</div>
+					
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a>
+						</li>
+						<li role="presentation" >
+							<a href="#customerProfile" aria-controls="customerProfile" role="tab" data-toggle="tab">Profile</a>
+						</li>
+						<li role="presentation" >
+							<a href="#customerAnalytics" aria-controls="customerAnalytics" role="tab" data-toggle="tab">Analytics</a>
+						</li>
+						<li role="presentation" id="smsTab">
+							<a href="#smsRecipients" aria-controls="smsRecipients" role="tab" data-toggle="tab">SMS</a>
+						</li>
+						<li role="presentation">
+							<a href="#actionHistory" aria-controls="actionHistory" role="tab" data-toggle="tab">Action History</a>
+						</li>
+						<li role="presentation">
+							<a href="#nextBestAction" aria-controls="nextBestAction" role="tab" data-toggle="tab">Next Best Action</a>
+						</li>
+						<li role="presentation">
+							<a href="#searchPostHistory" aria-controls="searchPostHistory" role="tab" data-toggle="tab">Search Post History</a>
+						</li>
+						<li role="presentation">
+							<a href="#images" aria-controls="images" role="tab" data-toggle="tab">Images</a>
+						</li>
+
+					</ul>
+
+					<div class="tab-content">
+
+						<!-- Tab: General -->
+						<div id="general" role="tabpanel" class="tab-pane active" >
+							<form class="form-horizontal" role="form">
+
+								<div class="form-group"></div>
+
+								<div class="form-group">
+									<label for="advisorTitle" class="col-sm-2 control-label">Demo Title</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="advisorTitleInput" placeholder="Title">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<div class="checkbox">
+											<label>
+												<input id="sendsmsInput" type="checkbox" onclick="smsCheckboxOnChange(this);">
+												Send SMS to <span id="numberRecipients">1</span> recipients for accepting offers 
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-8">
+										<div class="checkbox">
+											<label>
+												<input id="usecurrentlocationInput" type="checkbox" onclick="geoCheckboxOnChange(this);" >
+												Use current location of device and ignore coordinates below
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="geoLatitude" class="col-sm-2 control-label">Latitude</label>
+									<div class="col-sm-3">
+										<input type="text" class="form-control" id="latitudeInput" placeholder="51.23214">
+									</div>								
+									<label for="geoLongtitude" class="col-sm-2 control-label">Longtitude</label>
+									<div class="col-sm-3">
+										<input type="text" class="form-control" id="longtitudeInput" placeholder="8.2342">
+									</div>
+								</div>
+								
+								<div class="form-group"></div>
+								
+								
+								
+								
+							</form>
+						</div>
+
+						<!-- Tab: Customer Profile -->
+						<div id="customerProfile" role="tabpanel" class="tab-pane" >
+							<div class ="form-group"></div>
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="firstName" class="col-sm-2 control-label">Firstname</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="firstNameInput" placeholder="firstName">
+									</div>
+									<label for="city" class="col-sm-1 control-label">City</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="cityInput" placeholder="city">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="lastName" class="col-sm-2 control-label">Lastname</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="lastNameInput" placeholder="lastName">
+									</div>
+									<label for="zip" class="col-sm-1 control-label">Zip</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="zipInput" placeholder="zip">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="twitterid" class="col-sm-2 control-label">TwitterID</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="twitteridInput" placeholder="twitterid">
+									</div>
+									<label for="address" class="col-sm-1 control-label">Address</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="addressInput" placeholder="address">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="email" class="col-sm-2 control-label">Email</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="emailInput" placeholder="email">
+									</div>
+									<label for="state" class="col-sm-1 control-label">State</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="stateInput" placeholder="state">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="mobile" class="col-sm-2 control-label">Mobile</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="mobileInput" placeholder="mobile">
+									</div>
+									<label for="phone" class="col-sm-1 control-label">Phone</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="phoneInput" placeholder="phone">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="facebookid" class="col-sm-2 control-label">FacebookID</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="facebookidInput" placeholder="facebookid">
+									</div>
+									<label for="profileImage" class="col-sm-1 control-label">Image</label>
+									<div class="col-sm-4">
+										<input type="text" class="form-control" id="profileImageInput" placeholder="profileImage">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="facebookpage" class="col-sm-2 control-label">Facebookpage</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="facebookpageInput" placeholder="facebookpage">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="Familienstand" class="col-sm-2 control-label">Marital Status</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="FamilienstandInput" placeholder="Marital Status">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="Arbeitgeber" class="col-sm-2 control-label">Employer</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="ArbeitgeberInput" placeholder="Employer">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="Interests" class="col-sm-2 control-label">Interests</label>
+									<div class="col-sm-9">
+										<textarea type="text" class="form-control" id="InterestsInput" placeholder="Interests"></textarea>
+									</div>
+								</div>
+								
+								<div class="form-group"></div>
+							</form>
+						</div>
+
+						<!-- Tab: Customer Analytics -->
+						<div id="customerAnalytics" role="tabpanel" class="tab-pane" >
+							<form class="form-horizontal" role="form">
+
+								<div class="form-group"></div>
+
+								<!-- Analytics Grid -->
+								<div class="col-sm-12">
+									<table id="configuratorAnalyticsTable" class="table table-bordered table-hover">
+										<thead>
+											<tr >
+												<th class="text-center" width="30%">Label</th>
+												<th class="text-center" width="30%">Value</th>
+												<th class="text-center" width="40%">Text</th>
+											</tr>
+										</thead>
+										<tbody id="configuratorAnalyticsTbody"></tbody>
+									</table>
+								</div>
+								<!-- Ende Analytics Grid -->
+
+								<div class="form-group"></div>
+							</form>
+						</div>
+
+						<!-- Tab: SMS Recipients -->
+						<div id="smsRecipients" role="tabpanel" class="tab-pane" >
+							<form class="form-horizontal" role="form">
+
+								<div class="form-group"></div>
+
+								<!-- send sms check box moved to general tab -->
+
+								<!-- Mobile Numbers Grid -->
+								<div class="col-sm-12">
+									<table id="configuratorMobileNumberTable" class="table table-bordered table-hover">
+										<thead>
+											<tr >
+												<th class="text-center" width="20%">Name</th>
+												<th class="text-center" width="20%">Mobile</th>
+												<th class="text-center" width="60%">SMS Text</th>
+												<th><a id="add_row" onclick="addMobileNumber('','');" class="btn pull-right btn-primary btn-block">Add Recipient</a></th>
+											</tr>
+										</thead>
+										<tbody id="configuratorMobileNumberTbody"></tbody>
+									</table>
+								</div>
+								<!-- Ende Mobile Numbers Grid -->
+
+								<div class="form-group"></div>
+							</form>
+						</div>
+
+						<!-- Tab: Action History -->
+						<div id="actionHistory" role="tabpanel" class="tab-pane" >
+							<form class="form-horizontal" role="form">
+
+								<div class="form-group"></div>
+
+								<!-- ActionHistory Grid -->
+								<div class="col-sm-12 ">
+									<table id="configuratorActionHistoryTable" class="table table-bordered table-hover">
+										<thead>
+											<tr >
+												<th class="text-center" width="15%">ID</th>
+												<th class="text-center" width="30%">Description</th>
+												<th class="text-center" width="20%">Date</th>
+												<th class="text-center" width="40%">Contact/Response</th>
+												<th><a id="add_row" onclick="addHistoryRecord('','','');" class="btn pull-right btn-primary btn-block">Add Row</a></th>
+											</tr>
+										</thead>
+										<tbody id="configuratorActionHistoryTbody">
+
+										</tbody>
+									</table>
+								</div>
+								<!-- Ende ActionHistory Grid -->
+
+								<div class="form-group"></div>
+							</form>
+						</div>
+
+						<!-- Tab: Next Best Action -->
+						<div id="nextBestAction" role="tabpanel" class="tab-pane" >
+							<form class="form-horizontal" role="form">
+
+								<div class="form-group"></div>
+
+								<!-- NBA Grid -->
+								<div class="col-sm-12">
+									<table id="configuratorNbaTable" class="table table-bordered table-hover">
+										<thead>
+											<tr >
+												<th class="text-center" width="10%">ID</th>
+												<th class="text-center" width="40%">Offer Name</th>
+												<th class="text-center" width="10%">Score</th>
+												<th class="text-center" width="30%">Image</th>
+												<th><a id="add_row" onclick="addNbaRecord('','','');" class="btn pull-right btn-primary btn-block">Add Row</a></th>
+											</tr>
+										</thead>
+										<tbody id="configuratorNbaTbody">
+
+										</tbody>
+									</table>
+								</div>
+								<!-- Ende NBA Grid -->
+
+								<div class="form-group"></div>
+							</form>
+						</div>
+
+						<!-- Tab: Search Post History -->
+						<div id="searchPostHistory" role="tabpanel" class="tab-pane" >
+							<form class="form-horizontal" role="form">
+
+								<div class="form-group"></div>
+
+								<!-- SearchPostHistory Grid -->
+								<div class="col-sm-12">
+									<table id="configuratorSearchPostTable" class="table table-bordered table-hover">
+										<thead>
+											<tr >
+												<th class="text-center">ID</th>
+												<th class="text-center">Search / Post Content</th>
+												<th class="text-center">Date</th>
+												<th class="text-center">Source</th>
+												<th><a id="add_row" onclick="addSearchPost('','','');" class="btn pull-right btn-primary btn-block">Add Row</a></th>
+											</tr>
+										</thead>
+										<tbody id="configuratorSearchPostTbody">
+
+										</tbody>
+									</table>
+								</div>
+								<!-- Ende SearchPostHistory Grid -->
+
+								<div class="form-group"></div>
+							</form>
+						</div>
+						
+						<!-- Tab: Images -->
+						<div id="images" role="tabpanel" class="tab-pane" >
+							
+							<form class="form-horizontal" role="form">
+
+								<div class="form-group"></div>
+
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-6"><h4>Demo Story Pictures</h4></div>
+								</div>
+
+								<div class="form-group">
+									<label for="poster0Image" class="col-sm-2 control-label">Poster Image 0</label>
+									<div class="col-sm-4">
+										<input type="url" id="poster0Image" placeholder="<Image>.png" class="form-control">
+									</div>
+									<label for="poster1Image" class="col-sm-2 control-label">Poster Image 1</label>
+									<div class=" col-sm-4">
+										<input type="url" id="poster1Image" placeholder="<Image>.png" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="poster2Image" class="col-sm-2 control-label">Poster Image 2</label>
+									<div class="col-sm-4">
+										<input type="url" id="poster2Image" placeholder="<Image>.png" class="form-control">
+									</div>
+									<label for="facebookImage" class="col-sm-2 control-label">Poster Image 3</label>
+									<div class="col-sm-4">
+										<input type="url" id="poster3Image" placeholder="<Image>.png" class="form-control">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="iphone0Image" class="col-sm-2 control-label">IPhone Image 0</label>
+									<div class="col-sm-4">
+										<input type="url" id="iphone0Image" placeholder="<Image>.png" class="form-control">
+									</div>
+									
+								
+									<label for="iphone1Image" class="col-sm-2 control-label">IPhone Image 1</label>
+									<div class="col-sm-4">
+										<input type="url" id="iphone1Image" placeholder="<Image>.png" class="form-control">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="iphone2Image" class="col-sm-2 control-label">IPhone Image 2</label>
+									<div class=" col-sm-4">
+										<input type="url" id="iphone2Image" placeholder="<Image>.png" class="form-control">
+									</div>
+									<label for="iphone3Image" class="col-sm-2 control-label">IPhone Image 3</label>
+									<div class="col-sm-4">
+										<input type="url" id="iphone3Image" placeholder="<Image>.png" class="form-control">
+									</div>
+								</div>	
+									
+								<div class="form-group">
+									<label for="iphone4Image" class="col-sm-2 control-label">IPhone Image 4</label>
+									<div class=" col-sm-4">
+										<input type="url" id="iphone4Image" placeholder="<Image>.png" class="form-control">
+									</div>
+									<label for="iphone5Image" class="col-sm-2 control-label">IPhone Image 5</label>
+									<div class="col-sm-4">
+										<input type="url" id="iphone5Image" placeholder="<Image>.png" class="form-control">
+									</div>
+								</div>
+									
+								<div class="form-group">
+									<label for="iphone6Image" class="col-sm-2 control-label">IPhone Image 6</label>
+									<div class=" col-sm-4">
+										<input type="url" id="iphone6Image" placeholder="<Image>.png" class="form-control">
+									</div>									
+									<label for="iphone7Image" class="col-sm-2 control-label">IPhone Image 7</label>
+									<div class=" col-sm-4">
+										<input type="url" id="iphone7Image" placeholder="<Image>.png" class="form-control">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									
+									<label for="facebookImage" class="col-sm-2 control-label">Facebook Image</label>
+									<div class="col-sm-4">
+										<input type="url" id="facebookImage" placeholder="<Image>.png" class="form-control">
+									</div>
+									
+									<label for="qrcodeImage" class="col-sm-2 control-label">QR-Code Image</label>
+									<div class="col-sm-4">
+										<input type="url" id="qrcodeImage" placeholder="<Image>.png" class="form-control">
+									</div>
+								</div>
+								
+								<div class="form-group"></div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<div style="float:left;color:#737373;font-style:italic">Version 1.1 - last update 07.04.2015</div>
+				<a id="importExportButton" href="#" class="btn btn-default" onclick="importExportClicked();"> 
+					<span id="importExportButtonLabel">Import / Export</span> </a>
+				
+				<a id="aboutButton" href="#" class="btn btn-default" onclick="aboutUsClicked();"> 
+					<span id="aboutButtonLabel">Help</span> </a>
+					
+				<a id="configuratorButton" href="#" class="btn btn-default" onclick="configuratorClicked();" style="display: none"> 
+					Configurator </a>
+				
+				<a id="resetButton" href="#" class="btn btn-default" onclick="resetClicked();"> 
+					<span id="resetButtonLabel">Reset</span> </a>
+				
+				<a id="saveButton" href="#" class="btn btn-primary" onclick="saveConfiguration();"> Save changes </a>
+				
+				<a id="importConfig" href="#" class="btn btn-primary" onclick="importConfiguration();" style="display: none"> Import Config </a>
+			</div>
+		</div>
+	</div>
+</div>

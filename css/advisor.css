@@ -1,0 +1,112 @@
+.profile_image { 
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding:0px; 
+	border:1px solid #888;
+	width: 100%;
+}
+
+
+.advisor-form-lable {
+	font-size: 12px;
+	font-weight: bold;
+	color: #4F4F4F;
+	padding-right: 0px;
+	padding-left: 0px;
+	vertical-align: middle;
+	text-align: right;
+	float: left;
+}
+
+
+.advisor-form-input {
+	font-size: 12px;
+	font-weight: bold;
+	color: #4F4F4F;
+	/*border-width: 0px;*/
+	padding-right: 0px;
+	padding-left: 0px;
+	float: left;
+	/*overflow: scroll;*/
+	max-width: 100%;
+	width: 100%;
+	margin-top: -1px;
+}
+
+.advisor-form-select {
+	font-size: 12px;
+	font-weight: bold;
+	color: #4F4F4F;
+	/*border-width: 0px;*/
+	padding-right: 0px;
+	padding-left: 0px;
+	/*overflow: scroll;*/
+	max-width: 100%;
+	width: 100%;
+}
+
+.advisor-progress-label {
+	font-size: 12px;
+	font-weight: bold;
+	color: #4F4F4F;
+	float: left;
+	text-align: right;
+}
+
+#pnlCustomerProfile {
+	max-height: 245px;
+	min-height: 245px;
+
+}
+
+#pnlCustomerAnalytics {
+	max-height: 135px;
+	min-height: 135px;
+}
+
+#pnlCustomerNba {
+	min-height: 200px;
+}
+
+
+#dialogBox {
+	border-radius: 5px;
+}
+
+#dialogBox .pane-header {
+	padding:	5px 10px;
+	border-width:	0 0 1px; /* nullify ui-widget-content border, except bottom */
+	font-weight:	bold;
+}
+#dialogBox .ui-layout-content ,
+#dialogBox .ui-layout-south {
+	padding:	15px 10px;
+}
+.ui-tabs .ui-tabs-panel {
+	padding: 0;
+	border: 0;
+}
+.ui-layout-pane-center .ui-tabs-nav {
+	/* don't need border or rounded corners - tabs 'fill' the pane */ 
+	border-top:		0;
+	border-left:	0;
+	border-right:	0;
+	padding-bottom:	0 !important;
+	-moz-border-radius:		0;
+	-webkit-border-radius:	0;
+}
+
+.ui-widget {
+	font-size: 1em;
+	font-size: 12px;
+}
+
+
+.shadowbox {
+	border-color: #959595;
+	border-width: 1px;
+	border-style: solid;
+	background: #FFF;
+	box-shadow: 5px 15px 22px -7px #565656
+}

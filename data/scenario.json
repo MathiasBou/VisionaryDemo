@@ -1,0 +1,144 @@
+	{
+		"id": 1234,
+		"demoTitle": "HSBC Advisor Frontend",
+		"longtitude": "-78.767082",
+	    "latitude": "35.828772",
+	    "usecurrentlocation": true,
+	    "sendsms": false,
+		"formFields":
+			{
+				"lastName": "Boerner",
+				"firstName": "Oliver",
+				"twitterid": "oliboe",
+				"facebookid": "Oliver.Boerner@facebook.com",
+				"facebookpage": "https://www.facebook.com/oliver.boerner",
+				"address": "Henley Road",
+				"city": "Marlow",
+				"state": "NH",
+				"zip": "SL7 2EB",
+	            "mobile": "+49 173 6647047",
+				"phone": "+49 173 6647047",
+				"email": "oboerner@sas.com",
+				"purpose": "product inquiry",
+				"product": "",
+				"demeanor": "",
+				"profileImage": "images/profile_image.png", 
+				"Familienstand": "married with Annette Boerner (Origin: Facebook)",
+				"Arbeitgeber": "SAS Institute GmbH (Origin: Facebook)",
+				"Interests": "Cars (Facebook like BMW)\nFootball (Facebook like Bayern München)",
+	            "additionalinfotitle": "Home Branch",
+	            "additionalinfovalue": "100 Sas Campus Dr\nCary NC 27513\nUnited States"
+			},
+	    "mobileNumbers": [
+	        {
+	            "name": "Mathias",
+	            "mobile": "491735755021",
+	            "smsText": "Thanks {name} for accepting the {offername} offer!"
+	        }
+	    ],
+	    "demoImages": 
+	    	{
+	            "poster0": "images/mainposter.jpg",
+	            "poster1": "images/marlow.jpg",
+	            "poster2": "images/marlow_house.jpg",
+	            "poster3": "images/marlow_house2.jpg",
+	            "facebook": "images/facebook.png",
+	            "iphone0": "images/home_screen.png",
+	            "iphone1": "images/screen-1.png",
+	            "iphone2": "images/screen-2.png",
+	            "iphone3": "images/screen-3.png",
+	            "iphone4": "images/screen-4.png",
+	            "iphone5": "images/screen-5.png",
+	            "iphone6": "images/home_screen.png",
+	            "iphone7": "images/screen-approved.png",
+	            "qrcode": "images/qrcode.png"
+	    	},
+		"customerAnalytics": {
+			"title": "Customer Analytics",
+			"goodThreshold": 0.7,
+        	"okThreshold": 0.35,
+			"items": [
+		        {
+		            "label": "Satisfaction",
+		            "value": 0.44,
+		            "text": "45 %"
+		        },
+		        {	
+		        	"label": "Lifetime Value",
+		            "value": 0.7,
+		            "text": "75"
+		        },
+		        {
+		        	"label": "Risk",
+		            "value": 0.8,
+		            "text": "10 "
+		        },
+		        {
+		        	"label": "Fraud",
+		            "value": 0.2,
+		            "text": "5"
+		        }
+	    	]
+	    },
+	    "nba": {
+	    	"title": "Next Best Actions",
+	    	"items": [
+		        {
+		            "id": 2001,
+		            "desc": "Special Mortgage: 2 Year Fixed Advance Standard",
+		            "detail": "",
+		            "detailImg": "images/mortgage_2.jpg",
+		            "propensity": 78,
+		            "detail": "",
+		            "sms": "Dear Oliver, your product-details are sent in parallel via Email"
+		        },
+				{
+		            "id": 2002,
+		            "desc": "Initial Mortgage Calculation",
+		            "detail": "",
+		            "detailImg": "images/mortgage_1.jpg",
+		            "propensity": 55,
+		            "detail": "",
+		            "sms": "Dear Oliver, your product-details are sent in parallel via Email"
+		        }
+	    	]
+	    },
+	    "nbaHistory":  {
+	    	"title": "Action History",
+	    	"items": [
+		        {
+		            "id": 1001,
+		            "desc": "Mortgage",
+		            "detail": "",
+		            "responseDate": "2014-06-25",
+		            "response": "Presented in Mobile Browser"
+		        },
+		        {
+		            "id": 1002,
+		            "desc": "HSBC Sale 2014",
+		            "detail": "",
+		            "responseDate": "2014-06-25",
+		            "response": "Qr-Code Scan"
+		        },
+		        {
+		            "id": 1003,
+		            "desc": "HSBC Current Account",
+		            "detail": "",
+		            "responseDate": "2014-07-19",
+		            "response": "Accepted"
+		        }	
+	    	]
+	    },
+	    "searchHistory": { 
+	    	"title": "Search Post History",
+	    	"items": [
+		        {
+		            "id": 3001,
+		            "desc": "HSBC Sale 2014",
+		            "responseDate": "2014-06-23",
+		            "response": "",
+		            "source": "Website - search"
+		        }
+			]
+		}
+	}

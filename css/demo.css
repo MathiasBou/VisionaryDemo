@@ -1,0 +1,156 @@
+
+
+#mainContainerDiv {
+	margin-top: 30px;
+}
+
+#iphoneFrame {
+	background-image: url(../images/iphone_empty.jpg);
+	width: 370px;
+	height: 695px;
+	background-repeat: no-repeat;
+}
+
+
+#iphoneScreen{
+	position: relative;
+	top: 115px;
+	left: 33px;
+	width: 308px;
+	height: 464px;
+	z-index: 1;
+	border: 0px;
+}
+
+#iphoneScreen > img{
+	max-width: 100%;
+}
+
+#iphoneHomeButton {
+	position: relative;
+	width: 70px;
+	height: 70px;
+	top: 135px;
+	left: 153px;
+}
+
+#iphonePowerButton {
+	position: relative;
+	width: 70px;
+	height: 30px;
+	top: -550px;
+	left: 240px;
+}
+
+#iphoneMuteButton {
+	height: 70px;
+	width: 30px;
+	position: relative;
+	top: -530px;
+}
+
+#posterFrame {
+	height: 695px;
+	vertical-align: middle;
+}
+
+#posterFrame img {
+	max-width: 100%;
+}
+
+#rtdmAdvisorFrame{
+	display: none;
+	border: 3px;
+}
+
+#rtdmAdvisorContainer{
+	max-height:  690px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#googleMapsFrame{
+	display: none;
+	border: 2px solid #888;
+	height: 340px;
+	width: 100%;
+}
+
+#offerDetailsFrame{
+	margin-top: 10px;
+	display: none;
+	border: 2px solid #888;
+	height: 340px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+
+#posterPopupFrame {
+	display: none;
+	position: relative;
+	top:-450px;
+	left:65px;
+	height: 220px;
+	width: 220px;
+	box-shadow: 10px 10px 5px rgba(207, 207, 207, 0.6);
+}
+
+#posterPopupFrame img {
+	height: 220px;
+	width: 220px;
+}
+
+
+.vcenter {
+    display:table-cell;
+    vertical-align:middle;
+    float:none;
+}
+
+
+
+
+@media (max-width: 1199px) {
+	.row {
+		zoom: 0.8;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1329px) {
+	#iphoneFrame {
+		zoom: 0.8;
+	}
+	#posterFrame {
+		zoom: 0.8;
+	}
+	#rtdmAdvisorContainer{
+		zoom: 0.8;
+	}
+}
+
+@media (min-width: 1330px) and (max-width: 1500px) {
+	#iphoneFrame {
+		zoom: 0.9;
+	}
+	#posterFrame {
+		zoom: 0.9;
+	}
+	#rtdmAdvisorContainer{
+		zoom: 0.9;
+	}
+}
+
+@media (min-width: 1501px) {
+	#iphoneFrame {
+		zoom: 1;
+	}
+	#posterFrame {
+		zoom: 1;
+	}
+	#rtdmAdvisorContainer{
+		zoom: 1;
+	}
+}
