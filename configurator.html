@@ -37,12 +37,24 @@
 				
 				<div id="configuratorImportExportConfig" style="display: none">
 					
-					<br>
-					Import or export an existing configuration with a string representation of a JSON object
+					<br>					
+					Import or export an existing configuration with a string representation of a JSON object.
 					<br><br>
+					<span id="helpBlock" class="help-block">
+					<p class="text-primary">
+					<b>To export a configuration</b>, just copy the complete JSON object from the window below (current config) and save it into a text file
+					<br>
+					<b>To import a configuration</b>, just copy/paste your saved JSON object from your text file into the empty window below (custom) then click import
+					<br><br>
+					</p>
+					</span>
 					
 					<div class="form-group">
 						<label class="control-label" for="buttons">Predefined Configurations</label><br>
+						<span id="helpBlock" class="help-block">
+						<p class="text-primary">Click on one of the buttons to get a predefined configuration for the different industries
+						</p>
+						</span>
 						<div class="btn-group" role="group" aria-label="...">
 						  	<button type="button" class="btn btn-default" onclick="useCurrentConfig();">Current Config</button>
 						  	<button type="button" class="btn btn-default" onclick="useBankingConfig();">Banking</button>
@@ -113,7 +125,7 @@
 								<div class="form-group">
 									<label for="advisorTitle" class="col-sm-2 control-label">Demo Title</label>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" id="advisorTitleInput" placeholder="Title">
+										<input type="text" class="form-control" id="demoTitleInput" placeholder="Title">
 									</div>
 								</div>
 								
@@ -290,6 +302,14 @@
 								<div class="form-group"></div>
 
 								<!-- send sms check box moved to general tab -->
+								
+								<span id="helpBlock" class="help-block">
+								<p class="text-primary"> 
+								You can use two variables in your SMS text as you see in the example below. 
+								<b>{name}</b> = will be replaced by the name of the SMS recipient. 
+								<b>{offername}</b> = will be replaced by the name of the offer that will be accepted
+								</p>
+								</span><br>
 
 								<!-- Mobile Numbers Grid -->
 								<div class="col-sm-12">
@@ -405,9 +425,13 @@
 
 								<div class="form-group"></div>
 
-								<div class="form-group">
+								<!--  div class="form-group">
 									<div class="col-sm-offset-2 col-sm-6"><h4>Demo Story Pictures</h4></div>
-								</div>
+								</div-->
+								
+								<span id="helpBlock" class="help-block"><p class="text-primary">
+								You can save your own images on any location that is accessible through the internet, ie. you can use your public drop-box folder, then copy the shared link url of the image into the input fields below
+								<br></p></span>
 
 								<div class="form-group">
 									<label for="poster0Image" class="col-sm-2 control-label">Poster Image 0</label>
@@ -498,7 +522,7 @@
 			</div>
 
 			<div class="modal-footer">
-				<div style="float:left;color:#737373;font-style:italic">Version 1.1 - last update 07.04.2015</div>
+				<div style="float:left;color:#737373;font-style:italic">Version 1.1 - last update 10.04.2015</div>
 				<a id="importExportButton" href="#" class="btn btn-default" onclick="importExportClicked();"> 
 					<span id="importExportButtonLabel">Import / Export</span> </a>
 				

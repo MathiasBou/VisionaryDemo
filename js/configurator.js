@@ -55,7 +55,7 @@ function initConfigurator() {
     	}
     }
        
-    $("#advisorTitleInput").val(configScenario.demoTitle);
+    $("#demoTitleInput").val(configScenario.demoTitle);
     
     $("#sendsmsInput").prop("checked", checkIfTrue(configScenario.sendsms));
     if (checkIfTrue(configScenario.sendsms)) {
@@ -146,6 +146,7 @@ function saveConfiguration() {
 	configScenario.latitude 				 = getConfiguratorLatitude();
 	configScenario.usecurrentlocation 	 = getConfiguratorGeoCheckbox();
 	configScenario.sendsms 	             = getSMSGeoCheckbox();
+	configScenario.demoTitle			 = $("#demoTitleInput").val();
 	
     
     $.ajax(dataProviderUrl, {
