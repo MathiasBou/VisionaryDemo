@@ -6,6 +6,8 @@ by Khaled Nabli - khaled.nabli@sas.com
 @$http_proxy = "srv01gr.unx.sas.com:80";
 @$demoScenarioFile = "../data/scenario.json";
 @$demoScenario = array();
+@$demo
+
 
 if($_SERVER['REQUEST_METHOD'] == "GET") {
 	@$action = $_GET['action'];
@@ -233,4 +235,13 @@ function addToHistory(&$_demoScenario, $offerId, $offerDesc, $response) {
 	$formattedDate = date("d/m/Y");
 	$offerObj = array("id" => $offerId, "desc" => $offerDesc, "responseDate" => $formattedDate, "response" => $response);
 	array_unshift($_demoScenario["nbaHistory"]["items"], $offerObj);
+}
+
+
+
+function logUsage($eventType, $demoScenario, $detail1, $detail2) {
+	INSERT INTO `visionarydemo`.`demo_events` (`id`, `event_dttm`, `event_type`, `user_ip`, `user_lon`, `user_lat`, `user_system`, `user_scenario`, `detail1`, `detail2`) VALUES (NULL, CURRENT_TIMESTAMP, 'PAGE_LOAD', '123.222.212.222', '2.2222222', '2.2222222', 'VERY LONG', '', '', '');
+
+
+
 }
