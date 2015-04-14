@@ -136,6 +136,10 @@ function initGoogleMap() {
 function updateGoogleMapPos(position) {
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
+	if(checkIfTrue(demoScenario.usecurrentlocation)) {
+		demoScenario.latitude = latitude;
+		demoScenario.longitude = longitude;
+	}
 	var coords = new google.maps.LatLng(latitude, longitude);
 	var mapOptions = {
 		zoom: 15,

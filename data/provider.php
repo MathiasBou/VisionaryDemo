@@ -6,7 +6,11 @@ by Khaled Nabli - khaled.nabli@sas.com
 @$http_proxy = "srv01gr.unx.sas.com:80";
 @$demoScenarioFile = "../data/scenario.json";
 @$demoScenario = array();
-@$demo
+@$enable_logging = true;
+@$logging_db = array(
+	"host" => "localhost:3306", 
+	"user" => "visionarydemo",
+	"pass" => "Lnj9QqhV89MbtjLW");
 
 
 if($_SERVER['REQUEST_METHOD'] == "GET") {
@@ -39,6 +43,7 @@ function process($action, $offerId, $param) {
 		resetDemoScenario();
 		@header('Content-type: application/json');
 		echo json_encode(getDemoScenario());
+		@logUsage("DEMO_RESTART", getDemoScenario(), "", "");
 		return true;
 	}
 
@@ -49,6 +54,7 @@ function process($action, $offerId, $param) {
 		}
 		@header('Content-type: application/json');
 		echo json_encode(getDemoScenario());
+		@logUsage("DEMO_SAVE", getDemoScenario(), "", "");
 		return true;
 	}
 	
@@ -145,6 +151,12 @@ function acceptOffer($offerId) {
 }
 
 function sendSMS($_demoScenario, $removedOffer) {
+	
+	if($_demoScenario["sendsms"]==false){
+		logUsage("SEND_SMS", $_demoScenario, "SEND SMS is Deactivated", "");
+		return false;
+	} 
+
 	global $http_proxy;
 	$mobileList = $_demoScenario["mobileNumbers"];
 	$mobileSize = sizeof($mobileList);
@@ -178,7 +190,8 @@ function sendSMS($_demoScenario, $removedOffer) {
 		  $output = curl_exec($ch); // execute the request		
 		  //echo($output) . PHP_EOL; // output the profile information - includes the header	
 		curl_close($ch); // close curl resource to free up system resources
-	
+		
+		logUsage("SEND_SMS", $_demoScenario, "SEND SMS to " . $mobileName . " on " . $mobileNumber , "Text: " . $newText );
 		$i++;
 	}
 	
@@ -240,8 +253,21 @@ function addToHistory(&$_demoScenario, $offerId, $offerDesc, $response) {
 
 
 function logUsage($eventType, $demoScenario, $detail1, $detail2) {
-	INSERT INTO `visionarydemo`.`demo_events` (`id`, `event_dttm`, `event_type`, `user_ip`, `user_lon`, `user_lat`, `user_system`, `user_scenario`, `detail1`, `detail2`) VALUES (NULL, CURRENT_TIMESTAMP, 'PAGE_LOAD', '123.222.212.222', '2.2222222', '2.2222222', 'VERY LONG', '', '', '');
+	global $enable_logging;
+	global $logging_db;
+	$userIp = "IP: " . (isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] . " over proxy" : $_SERVER['REMOTE_ADDR'] . " direct access");
+	$userSystem = htmlspecialchars($_SERVER["HTTP_USER_AGENT"]);
+	$userLongtitude = $demoScenario["longtitude"];
+	$userLatitute = $demoScenario["latitude"];
 
 
+	$link = mysqli_connect($logging_db['host'], $logging_db['user'], $logging_db['pass']);
+	if (!$link) {
+	   	//return false;
+	}
 
+	$sqlInsertQuery = "INSERT INTO visionarydemo.demo_events (id, session,event_dttm, event_type, user_ip, user_lon, user_lat, user_system, user_scenario, detail1, detail2) VALUES (NULL, \"". session_id() ."\" ,CURRENT_TIMESTAMP, \"" . $eventType . "\", \"".$userIp."\", \"".$userLongtitude."\", \"".$userLatitute."\",\"".$userSystem."\", \"". addslashes(json_encode($demoScenario)) ."\", \"".$detail1."\",  \"".$detail2."\");";
+	mysqli_query($link,$sqlInsertQuery);
+	mysqli_close($link);
+	return true;
 }
