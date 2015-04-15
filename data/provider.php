@@ -256,6 +256,11 @@ function addToHistory(&$_demoScenario, $offerId, $offerDesc, $response) {
 function logUsage($eventType, $demoScenario, $detail1, $detail2) {
 	global $enable_logging;
 	global $logging_db;
+
+	if($enable_logging == false) {
+		return false; 
+	}
+
 	$userIp = "IP: " . (isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] . " over proxy" : $_SERVER['REMOTE_ADDR'] . " direct access");
 	$userSystem = htmlspecialchars($_SERVER["HTTP_USER_AGENT"]);
 	$userLongtitude = $demoScenario["longtitude"];
