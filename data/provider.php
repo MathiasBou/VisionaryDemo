@@ -153,7 +153,7 @@ function acceptOffer($offerId) {
 
 function sendSMS($_demoScenario, $removedOffer) {
 	
-	if($_demoScenario["sendsms"]==false){
+	if($_demoScenario["sendsms"]==false || $_demoScenario["sendsms"]=="false"){
 		logUsage("SEND_SMS", $_demoScenario, "SEND SMS is Deactivated", "");
 		return false;
 	} 
