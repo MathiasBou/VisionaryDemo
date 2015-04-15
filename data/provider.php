@@ -269,7 +269,7 @@ function logUsage($eventType, $demoScenario, $detail1, $detail2) {
 
 	$link = mysqli_connect($logging_db['host'], $logging_db['user'], $logging_db['pass']);
 	if (!$link) {
-	   	//return false;
+	   	return false;
 	}
 
 	$sqlInsertQuery = "INSERT INTO visionarydemo.demo_events (id, session,event_dttm, event_type, user_ip, user_lon, user_lat, user_system, user_scenario, detail1, detail2) VALUES (NULL, \"". session_id() ."\" ,CURRENT_TIMESTAMP, \"" . $eventType . "\", \"".$userIp."\", \"".$userLongtitude."\", \"".$userLatitute."\",\"".$userSystem."\", \"". addslashes(json_encode($demoScenario)) ."\", \"".$detail1."\",  \"".$detail2."\");";
