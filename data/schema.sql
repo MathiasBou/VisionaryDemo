@@ -16,3 +16,27 @@ CREATE TABLE IF NOT EXISTS `demo_events` (
   `detail1` varchar(1024) NOT NULL,
   `detail2` varchar(1024) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `demo_events`
+--
+ALTER TABLE `demo_events`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `demo_events`
+--
+ALTER TABLE `demo_events`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

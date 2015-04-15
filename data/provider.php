@@ -88,6 +88,7 @@ function process($action, $offerId, $param) {
 	else {
 		@header('Content-type: application/json');
 		echo json_encode(getDemoScenario());
+		@logUsage("DEMO_LOADING", getDemoScenario(), "", "");
 		return true;	
 	}
 }
