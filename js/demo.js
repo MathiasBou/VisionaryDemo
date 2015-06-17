@@ -177,7 +177,8 @@ function framePopupClicked() {
 
 function iphonePowerClicked() {
 	resetAdvisorDemo();
-	setIPhonePicture();
+	setIPhonePicture("images/home_screen_start.gif");
+	setPosterFramePicture("images/mainposter_start.jpg");
 	setTimeout(function() {    //do something special
 		console.log("Timer triggered");
 		currentDemoStep = 0;

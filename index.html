@@ -18,13 +18,26 @@
 </head>
 
 <body> 
-    <div id="mainContainerDiv" class="container-fluid">
+    <div id="mainContainerDiv" class="container">
+        <div id="screenSizeTooSmall" class="row">
+            <h2 class="text-center">This demo needs a screen width of 1024px or more</h2>
+        </div>
+        <!--div id="screenSizeInfo" class="row pull-right">
+            <span class="visible-xs"> screen-xs </span>
+            <span class="visible-sm"> screen-sm </span>
+            <span class="visible-md"> screen-md </span>
+            <span class="visible-lg"> screen-lg </span>
+        </div-->
+
         <div class="row">
-            <div id="primaryContainer" class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-0">
+            <div id="primaryContainer" class="col-sm-3">
                 <!-- IPHONE test-->
                 <div id="iphoneFrame">
+                    <div id="iphoneFrameImg">
+                        <img  src="images/iphone_empty.jpg"/>
+                    </div>
                     <div id="iphoneScreen" onclick="iphoneScreenClicked();">
-                        <img src="images/home_screen.png" width="308">
+                        <img src="images/home_screen_start.gif">
                     </div>
                     <div id="iphoneHomeButton" onclick="iphoneHomeClicked();"></div>
                     <div id="iphonePowerButton" onclick="iphonePowerClicked();"></div>
@@ -33,21 +46,21 @@
                 <!-- END IPHONE -->
             </div>
             
-            <div id="secondContainer" class="col-lg-7 col-md-8">
-                <div id="posterFrame" class="vcenter" onclick="frameScreenClicked();">
-                    <img class="img-rounded" src="images/mainposter.jpg">
+            <div id="secondContainer" class="col-sm-9">
+                <div id="posterFrame" class="" onclick="frameScreenClicked();">
+                    <img class="img-rounded" src="images/mainposter_start.jpg">
                 </div>
                 <div id="posterPopupFrame" onclick="framePopupClicked();">
                     <!-- QR Code -->
                     <img src="images/qrcode.png" />
                 </div>
                 <div id="rtdmAdvisorFrame">
-                    <div class="col-lg-7 col-md-7">
+                    <div class="col-sm-8">
                     <!-- Advisor Here -->
                         <div id="rtdmAdvisorContainer" class="shadowbox"></div>
                     </div>
 
-                    <div class="col-lg-5 col-md-5">
+                    <div class="col-sm-4">
                         <!-- Google Maps Here -->
                         <div id="googleMapsFrame"></div>
                         <!-- Offer Window Here -->

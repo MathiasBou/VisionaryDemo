@@ -4,20 +4,38 @@
 	margin-top: 30px;
 }
 
+#screenSizeTooSmall {
+	margin-top: 150px;
+	display: none;
+	color: gray;
+}
+
+#screenSizeInfo {
+	color: gray;
+}
+
+
+
+
 #iphoneFrame {
-	background-image: url(../images/iphone_empty.jpg);
-	width: 370px;
-	height: 695px;
-	background-repeat: no-repeat;
+
+}
+
+#primaryContainer {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#iphoneFrameImg > img {
+	max-width: 100%;
 }
 
 
 #iphoneScreen{
-	position: relative;
-	top: 115px;
-	left: 33px;
-	width: 308px;
-	height: 464px;
+	position: absolute;
+	top: 17%;
+    left: 11%;
+    width: 80%;
 	z-index: 1;
 	border: 0px;
 }
@@ -27,31 +45,30 @@
 }
 
 #iphoneHomeButton {
-	position: relative;
-	width: 70px;
-	height: 70px;
-	top: 135px;
-	left: 153px;
+	position: absolute;
+	width: 25%;
+	height: 15%;
+	top: 83%;
+	left: 38%;
 }
 
 #iphonePowerButton {
-	position: relative;
-	width: 70px;
-	height: 30px;
-	top: -550px;
-	left: 240px;
+	position: absolute;
+	width: 25%;
+	height: 5%;
+	top: 0%;
+	left: 60%;
 }
 
 #iphoneMuteButton {
-	height: 70px;
-	width: 30px;
-	position: relative;
-	top: -530px;
+	position: absolute;
+	height: 15%;
+	width: 7%;
+	top: 5%;
 }
 
 #posterFrame {
-	height: 695px;
-	vertical-align: middle;
+
 }
 
 #posterFrame img {
@@ -72,7 +89,7 @@
 #googleMapsFrame{
 	display: none;
 	border: 2px solid #888;
-	height: 340px;
+	height: 325px;
 	width: 100%;
 }
 
@@ -80,77 +97,80 @@
 	margin-top: 10px;
 	display: none;
 	border: 2px solid #888;
-	height: 340px;
+	height: 325px;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
+	background-size: contain;
 }
 
 
 #posterPopupFrame {
 	display: none;
-	position: relative;
-	top:-450px;
-	left:65px;
-	height: 220px;
-	width: 220px;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    height: 45%;
+    width: 29%;
 	box-shadow: 10px 10px 5px rgba(207, 207, 207, 0.6);
 }
 
 #posterPopupFrame img {
-	height: 220px;
-	width: 220px;
+	width: 100%;
 }
 
 
 .vcenter {
-    display:table-cell;
-    vertical-align:middle;
-    float:none;
+	display:table-cell;
+	vertical-align:middle;
+	float:none;
 }
 
 
 
 
-@media (max-width: 1199px) {
-	.row {
-		zoom: 0.8;
+
+/* demo not runnable below */
+@media (max-width: 1023px) {
+	#primaryContainer {
+		display: none;
+	}
+
+
+	#secondContainer {
+		display: none;
+	}
+
+	#screenSizeTooSmall {
+		display: block;
 	}
 }
 
-@media (min-width: 1200px) and (max-width: 1329px) {
-	#iphoneFrame {
-		zoom: 0.8;
+
+/* IPAD */
+@media (min-width: 1024px) and (max-width: 1200px) {
+	#primaryContainer {
+		/*position: relative;
+		top:100px;
+		left: -25px;
+		zoom: 0.8;*/
 	}
-	#posterFrame {
-		zoom: 0.8;
-	}
-	#rtdmAdvisorContainer{
-		zoom: 0.8;
+
+
+	#secondContainer {
+
 	}
 }
 
-@media (min-width: 1330px) and (max-width: 1500px) {
-	#iphoneFrame {
-		zoom: 0.9;
-	}
-	#posterFrame {
-		zoom: 0.9;
-	}
-	#rtdmAdvisorContainer{
-		zoom: 0.9;
-	}
+
+
+
+/* Bug fixes */
+.ui-progress span.ui-label {
+	left: 45%;
+	right: auto;
 }
 
-@media (min-width: 1501px) {
-	#iphoneFrame {
-		zoom: 1;
-	}
-	#posterFrame {
-		zoom: 1;
-	}
-	#rtdmAdvisorContainer{
-		zoom: 1;
-	}
+.ui-tabs .ui-tabs-nav li a {
+padding: .3em .6em;
 }

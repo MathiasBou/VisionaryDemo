@@ -56,13 +56,13 @@
 
 #pnlCustomerProfile {
 	max-height: 245px;
-	min-height: 245px;
+	min-height: 220px;
 
 }
 
 #pnlCustomerAnalytics {
 	max-height: 135px;
-	min-height: 135px;
+	min-height: 130px;
 }
 
 #pnlCustomerNba {
