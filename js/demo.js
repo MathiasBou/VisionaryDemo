@@ -72,13 +72,32 @@ function processDemoStep(interaction) {
 		case 9:
 			if(interaction === 'POSTER') {
 				currentDemoStep++;
-				setPosterFramePicture(demoScenario.demoImages.poster3);
+				if(demoScenario.demoImages.poster3 != "") {
+					setPosterFramePicture(demoScenario.demoImages.poster3);
+				}
+					
+				else {
+					currentDemoStep++;
+					setIPhonePicture(demoScenario.demoImages.iphone7);
+				}
 			}
 			break;
 		case 10:
 			if(interaction === 'POSTER') {
 				currentDemoStep++;
-				setIPhonePicture(demoScenario.demoImages.iphone7);				
+				setIPhonePicture(demoScenario.demoImages.iphone7);
+			}
+			break;
+		case 11:
+			if(interaction === 'IPHONE_SCREEN') {
+				currentDemoStep++;
+				setIPhonePicture(demoScenario.demoImages.iphone8);	
+			}
+			break;
+		case 12:
+			if(interaction === 'IPHONE_SCREEN') {
+				currentDemoStep++;
+				setIPhonePicture(demoScenario.demoImages.iphone9);	
 			}
 			break;
 	default:

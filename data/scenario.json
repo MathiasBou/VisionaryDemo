@@ -42,6 +42,8 @@
 	            "poster1": "images/marlow.jpg",
 	            "poster2": "images/marlow_house.jpg",
 	            "poster3": "images/marlow_house2.jpg",
+
+
 	            "facebook": "images/facebook.png",
 	            "iphone0": "images/home_screen.png",
 	            "iphone1": "images/screen-1.png",
@@ -51,6 +53,8 @@
 	            "iphone5": "images/screen-5.png",
 	            "iphone6": "images/home_screen.png",
 	            "iphone7": "images/screen-approved.png",
+	            "iphone8": "",
+	            "iphone9": "",
 	            "qrcode": "images/qrcode.png"
 	    	},
 		"customerAnalytics": {
